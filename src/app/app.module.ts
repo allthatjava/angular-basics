@@ -9,6 +9,10 @@ import { NotificationComponent } from './notification/notification.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
+import { ReferenceTemplateComponent } from './reference-template/reference-template.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { ViewChildComponent } from './view-child/view-child.component';
+import { ViewChildDemoComponent } from './view-child-demo/view-child-demo.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { ProductsComponent } from './products/products.component';
     HeaderComponent,
     NotificationComponent,
     SearchComponent,
-    ProductsComponent
+    ProductsComponent,
+    ReferenceTemplateComponent,
+    CustomerListComponent,
+    ViewChildComponent,
+    ViewChildDemoComponent
   ],
   imports: [
     BrowserModule,
