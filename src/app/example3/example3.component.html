@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="video-container" *ngFor="let video of videos">
+        <div class="video-card" [appHighlight2]="video.likes === mostLikedVideo.likes">
+            <div>
+                <img [src]="video.thumbnail" style="width:220px; height:210px">
+            </div>
+            <div><h4>{{video.title}}</h4></div>
+            <div class="details">
+                <div class="video-data">
+                    <span class="material-icons">thumb_up</span>{{video.likes}}
+                </div>
+                <div class="video-data">
+                    <span class="material-icons">thumb_down</span>{{video.dislike}}
+                </div>
+                <div class="video-data">
+                    <span class="material-icons">wifi_protected_setup</span>{{video.share}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

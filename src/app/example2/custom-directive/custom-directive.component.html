@@ -1,0 +1,16 @@
+<h1 setBackground appHover>This is test</h1>
+<div class="container" setBackground>
+    <p>custom-directive setBackground works!</p>
+</div>
+
+<div appHighlight appHover>
+    <p>custom-directive appHighlight works!</p>
+</div>
+
+<div class="container" appBetterhighlight [defaultColor]="'yellow'" [highlightColor]="'red'" [title]="'This is inline title'" >
+    <p>custom-directive @HostBinding works!</p>
+</div>
+
+<div appClass [display]="{container: true, 'change-font':true}">
+    <p>custom-directive ngClass works!</p>
+</div>

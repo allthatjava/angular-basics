@@ -1,0 +1,9 @@
+<div class="container">
+    <input type="text" #input >
+    <button class="btn btn-danger" (click)="onSubmit(input);">Submit</button>
+    <app-lifecycle-demo [enteredText]="enteredText" *ngIf="destroy">
+        <h4>This is projected content: {{enteredText}}</h4>
+    </app-lifecycle-demo>
+    <br>
+    <button (click)="DestoryComponent()">Destroy</button>
+</div>

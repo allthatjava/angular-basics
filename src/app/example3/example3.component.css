@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+}
+.video-container{
+    margin: 5px 5px;
+    padding: 5px 5px;
+}
+.details{
+    display:flex
+}
+.highlight{
+    background-color: #ddd;
+    border: #FF5722 3px solid;
+    border-radius: 5px;
+}
