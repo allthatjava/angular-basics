@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class Example3Component {
 
   title='Directive Example';
+  display: boolean = false;
+  occupation: string = 'student';
 
   videos = [
     {title:'My video 1', share: 415, likes:257, dislike:12, thumbnail:'/assets/test.jpg'},
@@ -20,5 +22,9 @@ export class Example3Component {
   getMostLikeVideo(){
     let videoCopy = [...this.videos];
     return videoCopy.sort((curr,next)=> next.likes - curr.likes)[0];
+  }
+
+  displayNotice(){
+    this.display = !this.display;
   }
 }

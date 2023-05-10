@@ -1,6 +1,9 @@
 .container{
     display: flex;
 }
+.container-horizontal{
+    display: block;
+}
 .video-container{
     margin: 5px 5px;
     padding: 5px 5px;
@@ -12,4 +15,7 @@
     background-color: #ddd;
     border: #FF5722 3px solid;
     border-radius: 5px;
+}
+.switch{
+    background: #FF0;
 }

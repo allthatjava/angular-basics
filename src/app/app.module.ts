@@ -28,9 +28,10 @@ import { BetterhighlightDirective } from './example2/custom-directive/directive/
 import { ClassDirective } from './example2/custom-directive/directive/class.directive';
 import { Example3Component } from './example3/example3.component';
 import { MatIconModule } from '@angular/material/icon';
+import { IfDirective } from './example3/directive/if.directive';
 
 const routes: Routes = [
-  {path:'', component: AppComponent},
+  {path:'', component: Example1Component},
   {path:'example1', component: Example1Component},
   {path:'example2', component: Example2Component},
   {path:'example3', component: Example3Component}
@@ -61,7 +62,8 @@ const routes: Routes = [
     BetterhighlightDirective,
     ClassDirective,
     Example3Component,
-    HighlightDirective2
+    HighlightDirective2,
+    IfDirective
   ],
   imports: [
     BrowserModule,

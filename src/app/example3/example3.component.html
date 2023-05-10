@@ -19,3 +19,30 @@
         </div>
     </div>
 </div>
+<button class="btn btn-primary" (click)="displayNotice()">Show Paragraph</button>
+<div class="container-horizontal">
+    <div *appIf="display">
+        <p>This test paragraph will not be displayed 1</p>
+    </div>
+    <div >
+        <p>This test paragraph will be displayed 2</p>
+    </div>
+    <div >
+        <p>This test paragraph will be displayed 3</p>
+    </div>
+</div>
+
+<div class="container-horizontal" [ngSwitch]="occupation">
+    <div *appIf="display">
+        <p>This test paragraph will not be displayed 1</p>
+    </div>
+    <div *ngSwitchCase="'student'" class="switch">
+        <p>This paragraph will be displayed if occuptaion is student</p>
+    </div>
+    <div *ngSwitchCase="'worker'" class="switch">
+        <p>This paragraph will be displayed if occuptaion is worker</p>
+    </div>
+    <div *ngSwitchDefault class="switch">
+        <p>This paragraph will be displayed if occuptaion is not student nor worker</p>
+    </div>
+</div>
