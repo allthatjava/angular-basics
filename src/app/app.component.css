@@ -1,3 +1,38 @@
 .wrapper {
     background-color: #FDEBD0;
 }
+.active{
+    background-color:  #dcdcdc;
+}
+ul{
+    display: flex;
+    list-style: none;
+    margin: 10px 10px;
+    padding: 10px 0px;
+}
+.main-container{
+    width: 880px;
+    margin: 0px auto;
+    display: block;
+}
+.nav-container{
+    /* position: fixed; */
+    width: 880px;
+}
+.spinner {
+    border: 16px solid silver;
+    border-top: 16px solid #222;
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    animation: spin 700ms linear infinite;
+    top: 50%;
+    left:50%;
+    position: absolute;
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg)}
+    100% {transform: rotate(-360deg)}
+    
+}

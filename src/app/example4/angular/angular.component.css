@@ -1,0 +1,8 @@
+.container-box{    
+    display: flex;
+    margin: 10px;
+    padding: 20px 20px;
+    display: inline-block;
+    background-color: #ccc;
+    border: 1px solid red;
+}

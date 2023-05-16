@@ -1,6 +1,48 @@
-<nav>
-  <a routerLink="/example1">example1</a>&nbsp;&nbsp;
-  <a routerLink="/example2">example2</a>&nbsp;&nbsp;
-  <a routerLink="/example3">example3</a>
-  <router-outlet></router-outlet>
-</nav>
+<div class="main-container">
+  <div class="nav-container">
+    <ul >
+      <!-- Using RouterLink -->
+      <li [routerLinkActive]="'active'"><a routerLink="/example1">example1</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="/example2">example2</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="/example3">example3</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="/example4">example4</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="/example5">example5</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="/example6">example6</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="/example7">example7</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="/example8">example8</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="/example9">example9</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="/example11">example11</a></li>
+      <!-- Using Fragment -->
+      <!-- <li [routerLinkActive]="'active'"><a routerLink="" fragment="example1">example1</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="" fragment="example2">example2</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="" fragment="example3">example3</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="" fragment="example4">example4</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="" fragment="example5">example5</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="" fragment="example6">example6</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="" fragment="example7">example7</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="" fragment="example8">example8</a></li>&nbsp;&nbsp;
+      <li [routerLinkActive]="'active'"><a routerLink="" fragment="example9">example9</a></li> -->
+      <div style="float: right;">
+      <span style="float: right;">
+        <li (click)="login()" *ngIf="!isAuthenticated()">Login</li>
+        <li (click)="logout()" *ngIf="isAuthenticated()">Logout</li>
+      </span>
+    </div>
+    </ul>
+  </div>
+  <div>
+    <!-- Usig RouterLink -->
+    <router-outlet></router-outlet>
+    <div class="spinner" *ngIf="displayLoadingIndicator"></div>
+    <!-- Using Fragment -->
+    <!-- <app-example1 id="example1"></app-example1>
+    <app-example2 id="example2"></app-example2>
+    <app-example3 id="example3"></app-example3>
+    <app-example4 id="example4"></app-example4>
+    <app-example5 id="example5"></app-example5>
+    <app-example6 id="example6"></app-example6>
+    <app-example7 id="example7"></app-example7>
+    <app-example8 id="example8"></app-example8>
+    <app-example9 id="example9"></app-example9> -->
+  </div>
+</div>

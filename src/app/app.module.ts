@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router'
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ContainerComponent } from './example1/Container/container/container.component';
@@ -8,14 +8,11 @@ import { NavComponent } from './example1/nav/nav.component';
 import { HeaderComponent } from './example1/header/header.component';
 import { NotificationComponent } from './example1/notification/notification.component';
 import { SearchComponent } from './example1/search/search.component';
-import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './example1/products/products.component';
 import { ReferenceTemplateComponent } from './example1/reference-template/reference-template.component';
 import { CustomerListComponent } from './example1/customer-list/customer-list.component';
 import { ViewChildComponent } from './example1/view-child/view-child.component';
 import { ViewChildDemoComponent } from './example1/view-child-demo/view-child-demo.component';
-import { Example1Component } from './example1/example1.component';
-import { Example2Component } from './example2/example2.component';
 import { LifecycleComponent } from './example2/lifecycle/lifecycle.component';
 import { LifecycleDemoComponent } from './example2/lifecycle-demo/lifecycle-demo.component';
 import { ContentChildComponent } from './example2/content-child/content-child.component';
@@ -26,16 +23,30 @@ import { CustomDirectiveComponent } from './example2/custom-directive/custom-dir
 import { HoverDirective } from './example2/custom-directive/directive/hover.directive';
 import { BetterhighlightDirective } from './example2/custom-directive/directive/betterhighlight.directive';
 import { ClassDirective } from './example2/custom-directive/directive/class.directive';
-import { Example3Component } from './example3/example3.component';
 import { MatIconModule } from '@angular/material/icon';
 import { IfDirective } from './example3/directive/if.directive';
+import { JavascriptComponent } from './example4/javascript/javascript.component';
+import { AngularComponent } from './example4/angular/angular.component';
+import { DataExampleComponent } from './example4/data-example/data-example.component';
+import { AllUsersComponent } from './example5/all-users/all-users.component';
+import { UserDetailComponent } from './example5/user-detail/user-detail.component';
+import { AppRoutingModule } from './app-routing.module';
 
-const routes: Routes = [
-  {path:'', component: Example1Component},
-  {path:'example1', component: Example1Component},
-  {path:'example2', component: Example2Component},
-  {path:'example3', component: Example3Component}
-];
+import { Example1Component } from './example1/example1.component';
+import { Example2Component } from './example2/example2.component';
+import { Example3Component } from './example3/example3.component';
+import { Example4Component } from './example4/example4.component';
+import { Example5Component } from './example5/example5.component';
+import { Example6Component } from './example6/example6.component';
+import { Example7Component } from './example7/example7.component';
+import { Comp1Component } from './example7/comp1/comp1.component';
+import { Comp2Component } from './example7/comp2/comp2.component';
+import { Comp3Component } from './example7/comp3/comp3.component';
+import { Example8Component } from './example8/example8.component';
+import { Example9Component } from './example9/example9.component';
+import { CourseComponent } from './example9/course/course.component';
+import { ErrorComponent } from './error/error.component';
+import { Example11Component } from './example11/example11.component';
 
 @NgModule({
   declarations: [
@@ -50,8 +61,6 @@ const routes: Routes = [
     CustomerListComponent,
     ViewChildComponent,
     ViewChildDemoComponent,
-    Example1Component,
-    Example2Component,
     LifecycleComponent,
     LifecycleDemoComponent,
     ContentChildComponent,
@@ -61,18 +70,34 @@ const routes: Routes = [
     HoverDirective,
     BetterhighlightDirective,
     ClassDirective,
-    Example3Component,
     HighlightDirective2,
-    IfDirective
+    IfDirective,
+    JavascriptComponent,
+    AngularComponent,
+    DataExampleComponent,
+    AllUsersComponent,
+    UserDetailComponent,
+    Example1Component,
+    Example2Component,
+    Example3Component,
+    Example4Component,
+    Example5Component,
+    Example6Component,
+    Example7Component,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    Example8Component,
+    Example9Component,
+    CourseComponent,
+    ErrorComponent,
+    Example11Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes),
-    MatIconModule
-  ],
-  exports: [
-    RouterModule
+    MatIconModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
