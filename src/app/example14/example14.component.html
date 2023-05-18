@@ -1,0 +1,65 @@
+<div class="main-area">
+    <div class="content-area">
+        <div class="header" >
+            <h1>Manage Products</h1>
+            <hr>
+        </div>
+        <div class="container">
+            <!-- Left Box -->
+            <div class="form-area">
+                <h3>Create Product</h3>
+                <form name="" class="form-control" #productsForm="ngForm" (ngSubmit)="onProductsCreate(productsForm.value)">
+                    <label>Product Name:</label>
+                    <input class="form-control" type="text" name="pName" ngModel/>
+                    <label>Product Description</label>
+                    <input class="form-control" type="text" name="desc"  ngModel/>
+                    <label>Product price</label>
+                    <input class="form-control" type="text" name="price"  ngModel/>
+
+                    <button class="btn btn-success" type="submit" >{{isEditMode?'Update Product':'Add Product'}}</button>
+                    <button *ngIf="isEditMode" class="btn btn-secondary" (click)="cancelUpdate()">Cancel</button>
+                </form>
+            </div>
+            <!-- Right Box -->
+            <div class="product-display-area">
+                <table id="products">
+                    <thead>
+                        <th>
+                            Id
+                        </th>
+                        <th>Name</th>
+                        <th>description</th>
+                        <th>price</th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="6" *ngIf="errorMessage!=''">{{errorMessage}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" *ngIf="allProducts.length < 1 && !isFetching">No product available</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" *ngIf="isFetching && errorMessage==''">Loading...</td>
+                        </tr>
+                        <tr *ngFor="let product of allProducts; index as i">
+                            <td>{{i+1}}</td>
+                            <td>{{product.pName}}</td>
+                            <td>{{product.desc}}</td>
+                            <td>{{product.price}}</td>
+                            <td>
+                                <button class="btn btn-warning" (click)="onProductDelete(product.id);">Delete</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-secondary" (click)="onEditClick(product.id);">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <button class="btn btn-success" (click)="onProductFetch();">Fetch Product</button>
+                <button class="btn btn-danger" (click)="onProductClear();">Clear Product</button>
+            </div>
+        </div>
+    </div>
+</div>

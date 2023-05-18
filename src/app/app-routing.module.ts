@@ -15,7 +15,10 @@ import { ErrorComponent } from './error/error.component';
 import { CourseGuardService } from './example10/course-guard.service';
 import { Example11Component } from './example11/example11.component';
 import { CanDeactivateGuardService } from "./example11/service/can-deactivate-guard.service";
-import { CourseResolveService } from "./example9/course-resolve.service";
+import { CourseResolveService } from "./example11/service/course-resolve.service";
+import { Example12Component } from './example12/example12.component';
+import { Example13Component } from './example13/example13.component';
+import { Example14Component } from './example14/example14.component';
 
 const routes: Routes = [
     {path:'', redirectTo: 'example1', pathMatch: 'full'},
@@ -30,10 +33,14 @@ const routes: Routes = [
     {path:'example9', component: Example9Component},
     // {path:'example9', component: Example9Component, canActivate:[CourseGuardService]},
     // {path:'example9/course/:id', component: CourseComponent},
-    {path:'example9', children:[
-      {path:'course/:id', component: CourseComponent}
+    {path:'example9', 
+      children:[
+        {path:'course/:id', component: CourseComponent}
       ], canActivateChild:[CourseGuardService]},
     {path:'example11', component: Example11Component, canDeactivate:[CanDeactivateGuardService], resolve:{coursesData: CourseResolveService}},
+    {path:'example12', component: Example12Component},
+    {path:'example13', component: Example13Component},
+    {path:'example14', component: Example14Component},
     {path:'**', component:ErrorComponent}
   ];
 

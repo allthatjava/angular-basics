@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css']
 })
-export class CourseComponent implements OnInit, OnDestroy{
+export class CourseComponent implements OnInit{
   course:CourseType;
   courseId:string;
   routeParamObs: Subscription;
@@ -20,23 +20,10 @@ export class CourseComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-    // this.courseId = this.activatedRoute.snapshot.paramMap.get('id')!;
+    console.log("Course Component initialized");
+    this.courseId = this.activatedRoute.snapshot.paramMap.get('id')!;
     // // this.courseId = this.activatedRoute.snapshot.params['id'];
-    // this.course = this.service.courses.find(x=>x.id == parseInt(this.courseId))!;
-
-    this.routeParamObs = this.activatedRoute.paramMap.subscribe((param)=>{
-      this.courseId = param.get('id')!;
-      this.course = this.service.courses.find(x=>x.id == parseInt(this.courseId))!;
-    })
-
-    //snapshot
-    this.activatedRoute.queryParamMap.subscribe((query)=>{
-      this.editMode = Boolean(query.get('edit'));
-    });
-  }
-
-  ngOnDestroy(){
-    this.routeParamObs.unsubscribe();
+    this.course = this.service.courses.find(x=>x.id == parseInt(this.courseId))!;
   }
 
   appendQueryParam(){

@@ -24,6 +24,7 @@ export class AppComponent implements OnInit{
     this.router.events.subscribe( (routerEvent: Event) => {
       if(routerEvent instanceof NavigationStart ){
         console.log("navigation start");
+        console.log(routerEvent);
         this.displayLoadingIndicator = true;
       }
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
-import { CoursesService } from './courses.service';
+import { CoursesService } from '../../example9/courses.service';
 import { Observable } from 'rxjs';
 
 @Injectable({

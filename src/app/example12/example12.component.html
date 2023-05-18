@@ -1,0 +1,40 @@
+<p>({{classMark}} / {{totalMarks}}) * 100 show up to decimal point 2: {{classMark | percentage: totalMarks : 2}}</p>
+
+
+
+<input type="text" [(ngModel)]="filterText" />
+<h2>Total Count: {{totalCourses | async}}</h2>
+<div >
+    <table style="border:10px; border-color: black;">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>author</th>
+                <th>duration</th>
+                <th>type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let course of courses | filterAuthor: filterText" >
+                <td>{{course.id}}</td>
+                <td>{{course.name}}</td>
+                <td>{{course.author}}</td>
+                <td>{{course.duration}}</td>
+                <td>{{course.type}}</td>
+            </tr>
+            <tr>
+                <td [colSpan]="5" style="height: 5px; background-color: black;"></td>
+            </tr>
+            <tr *ngFor="let course of filteredCourses" >
+                <td>{{course.id}}</td>
+                <td>{{course.name}}</td>
+                <td>{{course.author}}</td>
+                <td>{{course.duration}}</td>
+                <td>{{course.type}}</td>
+            </tr>   
+        </tbody>
+    </table>
+</div>
+<button (click)="onAddClick()">Add Test</button>
+<button (click)="onChangeClick()">Change Test</button>

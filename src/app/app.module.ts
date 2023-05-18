@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ContainerComponent } from './example1/Container/container/container.component';
@@ -47,6 +48,11 @@ import { Example9Component } from './example9/example9.component';
 import { CourseComponent } from './example9/course/course.component';
 import { ErrorComponent } from './error/error.component';
 import { Example11Component } from './example11/example11.component';
+import { PercentagePipe } from './example12/pipe/percentage.pipe';
+import { Example12Component } from './example12/example12.component';
+import { FilterPipe } from './example12/pipe/filter.pipe';
+import { Example13Component } from './example13/example13.component';
+import { Example14Component } from './example14/example14.component';
 
 @NgModule({
   declarations: [
@@ -91,13 +97,19 @@ import { Example11Component } from './example11/example11.component';
     Example9Component,
     CourseComponent,
     ErrorComponent,
-    Example11Component
+    Example11Component,
+    PercentagePipe,
+    Example12Component,
+    FilterPipe,
+    Example13Component,
+    Example14Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
     MatIconModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

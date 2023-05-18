@@ -1,8 +1,8 @@
 <div *ngFor="let course of courses" >
     <ul>
         <!-- <li><a (click)="onCourseClick(course.id)">Course Id {{course.id}}</a></li> -->
-        <!-- <li><a routerLink="{{'/example9/course/'+course.id}}" outlet="courseOutlet">Course Id {{course.id}}</a></li> -->
-        <li><a routerLink="/example9/course/{{course.id}}" outlet="courseOutlet">Course Id {{course.id}}</a></li> 
+        <li><a routerLink="/example9/course/{{course.id}}" outlet="courseOutlet">Course Id {{course.id}}</a></li>
+        <!-- <li><a [routerLink]="['/example9/course', course.id]" outlets="courseOutlet" >Course Id {{course.id}}</a></li>  -->
         <!-- <li><a [routerLink]="[{ outlets: { courseOutlet: '/example9/course/{{course.id}}'}}]" >Course Id {{course.id}}</a></li>  -->
     </ul>
 </div>

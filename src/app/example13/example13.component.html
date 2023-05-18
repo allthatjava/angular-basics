@@ -1,0 +1,25 @@
+<div >
+    <form (ngSubmit)="onSubmit(myForm);" #myForm="ngForm">
+        Name:<input type="text" name="name" id="name" ngModel required #name="ngModel" class="form-control"/>
+        <div><small *ngIf="name.invalid && name.touched">Name is required field</small></div>
+        Email:<input type="text" name="email" id="email" ngModel required email #email="ngModel" 
+        class="form-control"
+            [ngClass]="{'is-invalid':email.invalid && email.touched}"
+        />
+        <div><small *ngIf="email.invalid && email.touched">Invalid email entered.</small></div>
+        <div><button (click)="setDefaultValue()">Set Default values</button></div>
+        <!-- Male: <input type="radio" name="gender" value="Male" ngModel />
+        Female: <input type="radio" name="gender" value="Female" ngModel /><br /> -->
+        <span *ngFor="let gender of genders">
+            <label for="gender">{{gender.value}}</label>
+            <input type="radio" id="{{gender.id}}" value="{{gender.value}}" name="gender" [ngModel]="defaultGender" />
+        </span>
+
+        <button type="submit" >Submit</button><!--disabled]="!myForm.valid"-->
+    </form>
+</div>
+<div>
+    <div>name: {{fname}}</div>
+    <div>email: {{femail}}</div>
+    <div>gender: {{gen}}</div>
+</div>
